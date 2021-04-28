@@ -41,3 +41,22 @@ ax_1.annotate('Dusshera', (mpldates.date2num(dt.datetime(2020, 10, 25)) + 5, ind
 ax_1.annotate('Second Wave', (mpldates.date2num(dt.datetime(2021, 3, 11)) + 5, ind_new_cases[ind_date.index(dt.datetime(2021, 3, 11))]), xytext = (45,15), fontsize = 15, color = 'red', textcoords='offset points', arrowprops = dict(arrowstyle='-|>'))
 
 plt.show()
+
+#using matplotlib to create a plot for Nepal's data.
+fig_2 = plt.figure(figsize=(30,8))
+ax_2 = fig_2.add_subplot()
+ax_2.set_title('Covid-19 cases in Nepal with time', fontsize=20)
+ax_2.set_xlabel('Date', fontsize=15)
+ax_2.set_ylabel('Rolling Average of Covid-19 cases', fontsize=15)
+ax_2.plot(nep_date, nep_new_cases, linestyle='solid')
+plt.gcf().autofmt_xdate()
+date_format_2 = mpldates.DateFormatter('%b %Y')
+plt.gca().xaxis.set_major_formatter(date_format_2)
+plt.grid(True, color='k', linestyle=':')
+
+#creating annotations for labeling points in the plot
+ax_2.annotate('Lockdown Lifted', (mpldates.date2num(dt.datetime(2020, 7, 21)) + 2, nep_new_cases[nep_date.index(dt.datetime(2020, 7, 21))]), xytext = (100, 15), fontsize= 15, color  = 'red', textcoords='offset points', arrowprops=dict(arrowstyle='-|>'))
+ax_2.annotate('Dashain & Tihar', (mpldates.date2num(dt.datetime(2020, 10, 25)) + 2, nep_new_cases[nep_date.index(dt.datetime(2020, 10, 25))]), xytext = (50, 15), fontsize= 15, color  = 'red', textcoords='offset points', arrowprops=dict(arrowstyle='-|>'))
+ax_2.annotate('Second Wave', (mpldates.date2num(dt.datetime(2021, 4, 1)) + 2, nep_new_cases[nep_date.index(dt.datetime(2021, 4, 1))]), xytext = (30, 15), fontsize= 15, color  = 'red', textcoords='offset points', arrowprops=dict(arrowstyle='-|>'))
+
+plt.show()
