@@ -9,7 +9,7 @@ import numpy as np
 # and keeping only some of it (date, location, total cases, 
 # new cases, new cases smoothed, new deaths smoothed)
 
-df = pd.read_csv('datasets/covid_data.csv', index_col=0 )
+df = pd.read_csv('covid_data.csv', index_col=0 )
 df.set_index('date', inplace=True)
 df = df.iloc[:,[1,2,3,4,7]]
 df_ind = df.copy()[df['location'] == 'India'].fillna(0)
@@ -40,7 +40,7 @@ plt.grid(True, color='k', linestyle=':')
 ax_1.annotate('Dusshera', (mpldates.date2num(dt.datetime(2020, 10, 25)) + 5, ind_new_cases[ind_date.index(dt.datetime(2020, 10, 25))]), xytext = (35, 15), fontsize= 15, color  = 'red', textcoords='offset points', arrowprops=dict(arrowstyle='-|>'))
 ax_1.annotate('Second Wave', (mpldates.date2num(dt.datetime(2021, 3, 11)) + 5, ind_new_cases[ind_date.index(dt.datetime(2021, 3, 11))]), xytext = (45,15), fontsize = 15, color = 'red', textcoords='offset points', arrowprops = dict(arrowstyle='-|>'))
 
-plt.show()
+plt.savefig('india.png')
 
 #using matplotlib to create a plot for Nepal's data.
 fig_2 = plt.figure(figsize=(30,8))
@@ -59,4 +59,4 @@ ax_2.annotate('Lockdown Lifted', (mpldates.date2num(dt.datetime(2020, 7, 21)) + 
 ax_2.annotate('Dashain & Tihar', (mpldates.date2num(dt.datetime(2020, 10, 25)) + 2, nep_new_cases[nep_date.index(dt.datetime(2020, 10, 25))]), xytext = (50, 15), fontsize= 15, color  = 'red', textcoords='offset points', arrowprops=dict(arrowstyle='-|>'))
 ax_2.annotate('Second Wave', (mpldates.date2num(dt.datetime(2021, 4, 1)) + 2, nep_new_cases[nep_date.index(dt.datetime(2021, 4, 1))]), xytext = (30, 15), fontsize= 15, color  = 'red', textcoords='offset points', arrowprops=dict(arrowstyle='-|>'))
 
-plt.show()
+plt.savefig('nepal.png')
