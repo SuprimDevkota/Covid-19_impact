@@ -8,7 +8,6 @@ import numpy as np
 #filtering through the csv file for Nepal and India's covid data 
 # and keeping only some of it (date, location, total cases, 
 # new cases, new cases smoothed, new deaths smoothed)
-
 df = pd.read_csv('covid_data.csv', index_col=0 )
 df.set_index('date', inplace=True)
 df = df.iloc[:,[1,2,3,4,7]]
