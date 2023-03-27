@@ -16,8 +16,10 @@ Interestingly I found that Nepal lags behind India when it comes to the peak of 
 
 Insert gif or link to demo
 
+Nepal's covid infection:
 ![nepal](https://github.com/SuprimDevkota/Covid-19_impact/blob/master/nepal.png)
 
+India's covid infection:
 ![india](https://github.com/SuprimDevkota/Covid-19_impact/blob/master/india.png)
 
 Extracted the CSV Data from https://github.com/owid/covid-19-data/blob/master/public/data/owid-covid-data.csv
